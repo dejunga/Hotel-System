@@ -26,9 +26,12 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            usernameTb = new TextBox();
+            emailTb = new TextBox();
+            passwordTb = new TextBox();
+            repeatPasswordTb = new TextBox();
+            label4 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -36,57 +39,87 @@
             label1.AutoSize = true;
             label1.Location = new Point(111, 51);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(60, 15);
             label1.TabIndex = 0;
-            label1.Text = "label1";
+            label1.Text = "Username";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(111, 113);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(36, 15);
             label2.TabIndex = 1;
-            label2.Text = "label2";
+            label2.Text = "email";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(111, 174);
             label3.Name = "label3";
-            label3.Size = new Size(38, 15);
+            label3.Size = new Size(57, 15);
             label3.TabIndex = 2;
-            label3.Text = "label3";
+            label3.Text = "password";
             // 
-            // textBox1
+            // usernameTb
             // 
-            textBox1.Location = new Point(190, 48);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 3;
+            usernameTb.Location = new Point(210, 48);
+            usernameTb.Name = "usernameTb";
+            usernameTb.Size = new Size(100, 23);
+            usernameTb.TabIndex = 3;
             // 
-            // textBox2
+            // emailTb
             // 
-            textBox2.Location = new Point(190, 105);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 4;
+            emailTb.Location = new Point(210, 105);
+            emailTb.Name = "emailTb";
+            emailTb.Size = new Size(100, 23);
+            emailTb.TabIndex = 4;
             // 
-            // textBox3
+            // passwordTb
             // 
-            textBox3.Location = new Point(190, 166);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 5;
+            passwordTb.Location = new Point(210, 166);
+            passwordTb.Name = "passwordTb";
+            passwordTb.Size = new Size(100, 23);
+            passwordTb.TabIndex = 5;
+            // 
+            // repeatPasswordTb
+            // 
+            repeatPasswordTb.Location = new Point(210, 231);
+            repeatPasswordTb.Name = "repeatPasswordTb";
+            repeatPasswordTb.Size = new Size(100, 23);
+            repeatPasswordTb.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(111, 234);
+            label4.Name = "label4";
+            label4.Size = new Size(93, 15);
+            label4.TabIndex = 6;
+            label4.Text = "repeat password";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(197, 301);
+            button1.Name = "button1";
+            button1.Size = new Size(123, 23);
+            button1.TabIndex = 8;
+            button1.Text = "create a user";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Registrations
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(button1);
+            Controls.Add(repeatPasswordTb);
+            Controls.Add(label4);
+            Controls.Add(passwordTb);
+            Controls.Add(emailTb);
+            Controls.Add(usernameTb);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -102,8 +135,11 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox usernameTb;
+        private TextBox emailTb;
+        private TextBox passwordTb;
+        private TextBox repeatPasswordTb;
+        private Label label4;
+        private Button button1;
     }
 }

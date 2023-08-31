@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Hotel System": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 5050",
+      "workingDirectory": "C:\\Users\\j\\source\\repos\\Hotel System"
+    }
+  }
+}

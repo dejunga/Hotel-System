@@ -77,37 +77,8 @@ namespace Hotel_System {
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        internal bool InsertReservation(string? clientID, int roomID, DateTime dateIN, DateTime dateOUT) {
+            throw new NotImplementedException();
+        }
     }
 }
