@@ -31,6 +31,7 @@
             usernameTextbox = new TextBox();
             label2 = new Label();
             label1 = new Label();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -112,11 +113,22 @@
             label1.TabIndex = 0;
             label1.Text = "username";
             // 
+            // button2
+            // 
+            button2.Location = new Point(139, 37);
+            button2.Name = "button2";
+            button2.Size = new Size(141, 23);
+            button2.TabIndex = 2;
+            button2.Text = "ispisi sve usere";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(386, 329);
+            Controls.Add(button2);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
             Name = "LoginForm";
@@ -138,5 +150,6 @@
         private TextBox passwordTextbox;
         private TextBox usernameTextbox;
         private Button button1;
+        private Button button2;
     }
 }

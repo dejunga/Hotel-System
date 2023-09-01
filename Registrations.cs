@@ -57,7 +57,7 @@ namespace Hotel_System {
 
         private bool IsUsernameTaken(string username) {
             foreach (User user in registeredUsers) {
-                if (user.Name == username) {
+                if (user.Username == username) {
                     return true;
                 }
             }
@@ -70,5 +70,13 @@ namespace Hotel_System {
             passwordTb.Clear();
             repeatPasswordTb.Clear();
         }
+
+
+
+
+
+
+
+
     }
 }

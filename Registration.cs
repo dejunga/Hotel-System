@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.Data.SqlClient;
 
 namespace Hotel_System {
     internal class Registration {
@@ -80,6 +81,7 @@ namespace Hotel_System {
 
 
 
+        
 
 
 

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Data.SqlClient;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Hotel_System {
@@ -41,6 +43,35 @@ namespace Hotel_System {
             registrations.Show();
             this.Hide();
         }
+
+
+        User user = new User();
+
+
+
+        private async void button2_Click(object sender, EventArgs e) {
+            User user = new User(); // Create an instance of the User class
+
+            List<User> users = user.GetAllUsers();
+
+            if (users.Count > 0) {
+                string folderPath = "C:/Users/j/Desktop/test/"; // Specify the desired folder path
+                string fileName = "users.txt"; // Specify the desired file name
+
+                string filePath = Path.Combine(folderPath, fileName);
+
+                try {
+                    user.ExportUsersToTxt(users, filePath); // Call the instance method on the user instance
+                    MessageBox.Show("Users exported successfully.");
+                } catch (Exception ex) {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+            } else {
+                MessageBox.Show("No users found in the database.");
+            }
+        }
+
+
 
     }
 }
