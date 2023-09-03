@@ -47,7 +47,7 @@ namespace Hotel_System {
             Logger.Log("User navigated to the registrations form.");
         }
 
-        private async void button2_Click(object sender, EventArgs e) {
+        private void button2_Click(object sender, EventArgs e) {
             User user = new User();
 
             List<User> users = user.GetAllUsers();
