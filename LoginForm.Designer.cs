@@ -32,6 +32,7 @@
             label2 = new Label();
             label1 = new Label();
             button2 = new Button();
+            labelDate = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -123,11 +124,20 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // labelDate
+            // 
+            labelDate.AutoSize = true;
+            labelDate.Location = new Point(139, 9);
+            labelDate.Name = "labelDate";
+            labelDate.Size = new Size(0, 15);
+            labelDate.TabIndex = 3;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(386, 329);
+            Controls.Add(labelDate);
             Controls.Add(button2);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
@@ -138,6 +148,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -151,5 +162,6 @@
         private TextBox usernameTextbox;
         private Button button1;
         private Button button2;
+        private Label labelDate;
     }
 }
