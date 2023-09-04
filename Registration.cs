@@ -9,21 +9,17 @@ namespace Hotel_System {
         public async Task<RegistrationResult> InsertUserAsync(string username, string email, string password, string repeatedPassword) {
             RegistrationResult result = new RegistrationResult();
 
-            // Check if the username is already taken
             if (await IsUsernameTakenAsync(username)) {
                 result.Message = "Username is already taken.";
             }
 
-            // Check if the email is valid
             else if (!IsValidEmail(email)) {
                 result.Message = "Invalid email format.";
             }
 
-            // Check if the password and repeatedPassword match
             else if (password != repeatedPassword) {
                 result.Message = "Passwords do not match.";
             } else {
-                // Proceed with user insertion asynchronously
                 using (SqlConnection connection = new SqlConnection(connectionString)) {
                     await connection.OpenAsync();
 
@@ -50,25 +46,21 @@ namespace Hotel_System {
             return result;
         }
 
-        private Task<bool> IsUsernameTakenAsync(string username) {
-            throw new NotImplementedException();
-        }
-
-        private bool IsUsernameTaken(string username) {
+        private async Task<bool> IsUsernameTakenAsync(string username) {
             using (SqlConnection connection = new SqlConnection(connectionString)) {
-                connection.Open();
+                await connection.OpenAsync();
 
                 string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
                 using (SqlCommand command = new SqlCommand(query, connection)) {
                     command.Parameters.AddWithValue("@Username", username);
 
-                    int userCount = (int)command.ExecuteScalar();
+                    int userCount = (int)await command.ExecuteScalarAsync();
 
                     return userCount > 0;
                 }
             }
-            return false;
         }
+
 
         private bool IsValidEmail(string email) {
             try {

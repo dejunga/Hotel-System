@@ -133,12 +133,12 @@ namespace Hotel_System {
 
         private void editBtn_Click(object sender, EventArgs e) {
             if (dataGridView2.SelectedRows.Count > 0) {
-                int roomId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["Id"].Value); // Get the Id from the selected row
+                int roomId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["Id"].Value);
                 int capacity = Convert.ToInt32(capacityTb.Text);
                 int price = Convert.ToInt32(priceTb.Text);
                 int isFree = Convert.ToInt32(isFreeTb.Text);
 
-                bool editResult = room.EditRoom(roomId, capacity, price, isFree); // Pass roomId
+                bool editResult = room.EditRoom(roomId, capacity, price, isFree);
 
                 if (editResult) {
                     MessageBox.Show("Room information updated successfully.");
@@ -163,7 +163,7 @@ namespace Hotel_System {
 
                         if (removeResult) {
                             MessageBox.Show("Room removed successfully.");
-                            RefreshDataGridView(); // Refresh the DataGridView after successful removal
+                            RefreshDataGridView();
                         } else {
                             MessageBox.Show("Failed to remove room.");
                         }

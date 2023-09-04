@@ -33,6 +33,8 @@
             label1 = new Label();
             button2 = new Button();
             labelDate = new Label();
+            button3 = new Button();
+            openFileDialog1 = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -118,7 +120,7 @@
             // 
             button2.Location = new Point(139, 37);
             button2.Name = "button2";
-            button2.Size = new Size(141, 23);
+            button2.Size = new Size(96, 23);
             button2.TabIndex = 2;
             button2.Text = "ispisi sve usere";
             button2.UseVisualStyleBackColor = true;
@@ -132,11 +134,26 @@
             labelDate.Size = new Size(0, 15);
             labelDate.TabIndex = 3;
             // 
+            // button3
+            // 
+            button3.Location = new Point(241, 37);
+            button3.Name = "button3";
+            button3.Size = new Size(93, 23);
+            button3.TabIndex = 4;
+            button3.Text = "unesi usera";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(386, 329);
+            Controls.Add(button3);
             Controls.Add(labelDate);
             Controls.Add(button2);
             Controls.Add(groupBox1);
@@ -163,5 +180,7 @@
         private Button button1;
         private Button button2;
         private Label labelDate;
+        private Button button3;
+        private OpenFileDialog openFileDialog1;
     }
 }

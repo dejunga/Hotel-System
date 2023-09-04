@@ -13,10 +13,6 @@ namespace Hotel_System {
 
         private string connectionString = Baza.ConnectionString();
 
-        //Reservation reservation = new Reservation();
-
-
-
 
         public DataTable GetReservations() {
             DataTable reservationsTable = new DataTable();

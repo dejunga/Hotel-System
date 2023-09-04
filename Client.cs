@@ -6,18 +6,24 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+//using Dapper;
 
 namespace Hotel_System {
     internal class Client {
 
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string email { get; set; }
+        public string OIB { get; set; }
+
+
+
         private string connectionString = Baza.ConnectionString();
 
         public bool InsertClient(string name, string surname, string email, int oib) {
-            // Validate the email address using MailAddress class
             try {
                 var mailAddress = new MailAddress(email);
             } catch (FormatException) {
-                // Invalid email format
                 return false;
             }
 
@@ -42,11 +48,9 @@ namespace Hotel_System {
 
 
         public bool EditClient(int id, string name, string surname, string email, int oib) {
-            // Validate the email address using MailAddress class
             try {
                 var mailAddress = new MailAddress(email);
             } catch (FormatException) {
-                // Invalid email format
                 return false;
             }
 
@@ -93,12 +97,6 @@ namespace Hotel_System {
                 return clientsTable;
         }
 
-        //internal bool RemoveClient(int clientId) {
-        //    throw new NotImplementedException();
-        //}
-
-
-
         public bool RemoveClient(int id) {
             using (SqlConnection connection = new SqlConnection(connectionString)) {
                 connection.Open();
@@ -114,6 +112,39 @@ namespace Hotel_System {
                 }
             }
         }
+
+
+
+        //public async Task<List<Client>> GetAllClientsAsync() {
+        //    using (SqlConnection connection = new SqlConnection(connectionString)) {
+        //        return (await connection.QueryAsync<Client>("SELECT * FROM Clients")).ToList();
+        //    }
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

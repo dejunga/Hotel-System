@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using Dapper;
 
 namespace Hotel_System {
     public partial class Clients : Form {
@@ -39,7 +41,7 @@ namespace Hotel_System {
         }
 
 
-        private Client client = new Client(); // Declare this at the form level
+        private Client client = new Client();
         private void addBtn_Click(object sender, EventArgs e) {
             string name = nameTb.Text;
             string surname = surnameTb.Text;
@@ -50,9 +52,7 @@ namespace Hotel_System {
 
                 if (insertResult) {
                     MessageBox.Show("Client added successfully.");
-                    // Refresh the DataGridView after successful insertion
                     RefreshDataGridView();
-                    // Optionally, clear the input fields or perform other actions.
                 } else {
                     MessageBox.Show("Failed to add client.");
                 }
@@ -62,7 +62,7 @@ namespace Hotel_System {
         }
 
         private void RefreshDataGridView() {
-            dataGridView1.DataSource = client.GetClients(); // Refresh the grid data
+            dataGridView1.DataSource = client.GetClients();
         }
 
 
@@ -117,7 +117,7 @@ namespace Hotel_System {
 
                         if (removeResult) {
                             MessageBox.Show("Client removed successfully.");
-                            RefreshDataGridView(); // Refresh the DataGridView after successful removal
+                            RefreshDataGridView();
                         } else {
                             MessageBox.Show("Failed to remove client.");
                         }
@@ -130,6 +130,24 @@ namespace Hotel_System {
             }
         }
 
+        //private async void button1_Click(object sender, EventArgs e) {
+        //    try {
+        //        var clients1 = await clients1.GetAllClientsAsync();
+
+        //        string jsonData = JsonConvert.SerializeObject(clients1);
+
+        //        SaveFileDialog saveFileDialog = new SaveFileDialog();
+        //        saveFileDialog.Filter = "JSON Files | *.json";
+        //        saveFileDialog.DefaultExt = "json";
+
+        //        if (saveFileDialog.ShowDialog() == DialogResult.OK) {
+        //            File.WriteAllText(saveFileDialog.FileName, jsonData);
+        //            MessageBox.Show("Clients exported successfully!");
+        //        }
+        //    } catch (Exception ex) {
+        //        MessageBox.Show($"An error occurred: {ex.Message}");
+        //    }
+        //}
 
     }
 }

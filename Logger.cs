@@ -14,8 +14,6 @@ namespace Hotel_System {
                     writer.WriteLine($"{DateTime.Now}: {message}");
                 }
             } catch (Exception ex) {
-                // Handle any logging exceptions, such as IO errors.
-                // In this simple example, we'll just print to the console.
                 Console.WriteLine($"Failed to log message. Error: {ex.Message}");
             }
         }

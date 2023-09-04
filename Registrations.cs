@@ -42,7 +42,6 @@ namespace Hotel_System {
                     RegistrationResult registrationResult = await registration.InsertUserAsync(username, email, password, repeatPassword);
                     MessageBox.Show(registrationResult.Message);
                     if (registrationResult.Success) {
-                        // Clear the input fields
                         ClearInputFields();
                     }
                 } catch (FormatException) {
